@@ -16,8 +16,11 @@ export class DataService {
    return this.http.get('https://recipe-4f1fb.firebaseio.com/recipes.json')
    .map(
     (response: Response) => {
+      // Assign response to Recipe Model 
       const recipes: Recipe[] = response.json();
+      // Check if recipe contains ingredients array
       for(let recipe of recipes) {
+        // If not then just add it as a blank array
         if(!recipe['ingredients']) {
           recipe['ingredients'] = [];
         }
