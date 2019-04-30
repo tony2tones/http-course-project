@@ -4,16 +4,18 @@ import { RecipeService } from '../recipes/recipe.service';
 
 import { Recipe } from '../recipes/recipe.model';
 import 'rxjs/add/operator/map';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  constructor(private http: Http, private recipeService: RecipeService) { }
+  constructor(private http: Http, private recipeService: RecipeService, private authService : AuthService) { }
 
   fetchRecipes() {
-   return this.http.get('https://recipe-4f1fb.firebaseio.com/recipes.json')
+    const token = this.authService.getToken();
+   return this.http.get('https://recipe-4f1fb.firebaseio.com/recipes.json?auth=' + token)
    .map(
     (response: Response) => {
       // Assign response to Recipe Model 
