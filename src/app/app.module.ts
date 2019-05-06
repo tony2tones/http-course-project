@@ -10,7 +10,6 @@ import { RecipeService } from './recipes/recipe.service';
 import { DataService } from './shared/data.service';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
-import { RecipesModule } from './recipes/recipes.modules';
 import { SharedModule } from './shared/shared.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module'
 import { AuthModule } from './auth/auth.module';
@@ -23,7 +22,6 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     BrowserModule,
     HttpModule,
-    RecipesModule,
     SharedModule,
     ShoppingListModule,
     AuthModule,
