@@ -13,19 +13,19 @@ import { AuthGuard } from './auth/auth-guard.service';
 import { SharedModule } from './shared/shared.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module'
 import { AuthModule } from './auth/auth.module';
-import { RecipesModule } from './recipes/recipes.modules';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
     SharedModule,
     ShoppingListModule,
-    RecipesModule,
     AuthModule,
     AppRoutingModule,
   ],
